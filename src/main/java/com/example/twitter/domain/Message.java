@@ -14,6 +14,7 @@ public class Message {
     private Integer id;
     private String text;
     private String tag;
+    private User author;
 
     public String getText() {
         return text;

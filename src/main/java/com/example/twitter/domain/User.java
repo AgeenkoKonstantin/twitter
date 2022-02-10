@@ -21,9 +21,6 @@ public class User implements UserDetails {
     private String username;
     @NotBlank(message = "Password cannot be empty")
     private String password;
-    @Transient
-    @NotBlank(message = "Password confirmation cannot be empty")
-    private String password2;
     private boolean active;
     @Email(message = "Email is not correct")
     @NotBlank(message = "Email cannot be empty")
@@ -34,13 +31,6 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
-    public String getPassword2() {
-        return password2;
-    }
-
-    public void setPassword2(String password2) {
-        this.password2 = password2;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
